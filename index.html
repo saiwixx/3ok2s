@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лендінг продукту</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+    crossorigin="anonymous">
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .navbar-nav .nav-link {
+      color: var(--bs-dark) !important;
+      transition: color 0.3s ease;
+    }
+
+    .navbar-nav .nav-link.active,
+    .navbar-nav .nav-link:hover {
+      color: var(--bs-primary) !important;
+    }
+
+    .navbar-nav .nav-link.active {
+      font-weight: 500;
+    }
+
+    .navbar-toggler {
+      cursor: pointer;
+    }
+
+    #navToggle:checked ~ .navbar-collapse {
+      display: block;
+    }
+
+    section {
+      scroll-margin-top: 70px;
+    }
+
+    .hero-image {
+      animation: heroFloat 4s ease-in-out infinite;
+    }
+
+    @keyframes heroFloat {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(-15px); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-image { animation: none; }
+    }
+
+    .faq-item summary {
+      list-style: none;
+      cursor: pointer;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary i {
+      transition: transform 0.3s ease;
+    }
+
+    .faq-item[open] summary i {
+      transform: rotate(90deg);
+    }
+
+    a.text-secondary:hover {
+      color: var(--bs-primary) !important;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand text-dark fs-2 fw-bold" href="#">Awesome Product</a>
+      <input type="checkbox" id="navToggle" class="d-none">
+      <label for="navToggle" class="navbar-toggler" aria-label="Відкрити меню">
+        <span class="navbar-toggler-icon"></span>
+      </label>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item">
+            <a class="nav-link text-primary active" href="#heroSection">Головна</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">Про нас</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#features">Можливості</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#pricing">Ціни</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#faq">Питання</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Контакти</a>
+          </li>
+          <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+            <a class="btn btn-primary rounded-pill py-2 px-3 fw-semibold" href="#pricing">
+              Почати
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section id="heroSection" class="container bg-white py-5 min-vh-100 d-flex align-items-center">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6 text-center text-lg-start">
+        <h1 class="display-3 fw-bold mb-4">Розвивайте свій бізнес з інноваційними рішеннями</h1>
+        <p class="lead mb-5 text-secondary">
+          Наш сучасний продукт допомагає впорядкувати робочі процеси, підвищити
+          продуктивність і забезпечити зростання.
+        </p>
+        <div class="d-flex flex-column flex-sm-row justify-content-center justify-content-lg-start
+          align-items-center">
+          <a href="#pricing" class="btn btn-primary rounded-pill py-2 px-3 fw-semibold me-sm-3 mb-3
+            mb-sm-0 icon-link icon-link-hover">
+            Почати <i class="bi bi-arrow-right ms-2 mb-2"></i>
+          </a>
+          <a href="#" class="text-decoration-none d-flex align-items-center text-dark">
+            <span class="btn rounded-circle border-3 border-primary text-white me-2 d-flex
+              align-items-center justify-content-center" style="width:40px; height:40px;">
+              <i class="bi bi-play-fill text-primary fs-3"></i>
+            </span>
+            Дивитися відео
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-6 d-flex justify-content-center">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000&q=80" class="img-fluid hero-image rounded"
+          alt="Аналітика продукту на екрані ноутбука">
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="bg-white py-5">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <span class="badge text-primary-emphasis bg-primary-subtle rounded-pill mb-2 px-3 py-2">
+            ПРО НАС
+          </span>
+          <h2 class="display-5 fw-bold">Ми працюємо на ваш успіх</h2>
+          <p class="mt-4 text-secondary">
+            Ми — команда ентузіастів, які створюють зручні та потужні рішення для бізнесу
+            будь-якого розміру. Наша мета — спростити складні завдання, щоб ви могли
+            зосередитися на головному.
+          </p>
+          <a href="#" class="btn btn-primary rounded-pill py-2 px-3 fw-semibold mt-4 icon-link
+            icon-link-hover">
+            Детальніше
+            <i class="bi bi-arrow-right ms-2 mb-2"></i>
+          </a>
+        </div>
+        <div class="col-lg-6">
+          <img src="https://images.unsplash.com/photo-1636647677481-f134fda3f408?auto=format&fit=crop&w=1000&q=80" class="img-fluid rounded" alt="Команда за роботою">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <span class="badge text-primary-emphasis bg-primary-subtle rounded-pill mb-2 px-3 py-2">
+          МОЖЛИВОСТІ
+        </span>
+        <h2 class="h1 fw-bold text-dark">Наші переваги</h2>
+      </div>
+
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-6">
+          <img src="https://images.unsplash.com/photo-1758762641372-e3b52bf061d4?auto=format&fit=crop&w=1000&q=80" class="img-fluid rounded-4" alt="Команда працює за комп’ютерами">
+        </div>
+        <div class="col-lg-6">
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div class="d-flex align-items-center p-3 rounded-4 bg-white shadow-sm h-100">
+                <i class="bi bi-check-lg fs-4 text-primary me-3"></i>
+                <h5 class="mb-0 fw-bold">Зручна панель керування</h5>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="d-flex align-items-center p-3 rounded-4 bg-white shadow-sm h-100">
+                <i class="bi bi-check-lg fs-4 text-primary me-3"></i>
+                <h5 class="mb-0 fw-bold">Аналітика в реальному часі</h5>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="d-flex align-items-center p-3 rounded-4 bg-white shadow-sm h-100">
+                <i class="bi bi-check-lg fs-4 text-primary me-3"></i>
+                <h5 class="mb-0 fw-bold">Інструменти для командної роботи</h5>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="d-flex align-items-center p-3 rounded-4 bg-white shadow-sm h-100">
+                <i class="bi bi-check-lg fs-4 text-primary me-3"></i>
+                <h5 class="mb-0 fw-bold">Безпечне зберігання даних</h5>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="d-flex align-items-center p-3 rounded-4 bg-white shadow-sm h-100">
+                <i class="bi bi-check-lg fs-4 text-primary me-3"></i>
+                <h5 class="mb-0 fw-bold">Гнучкі звіти</h5>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="d-flex align-items-center p-3 rounded-4 bg-white shadow-sm h-100">
+                <i class="bi bi-check-lg fs-4 text-primary me-3"></i>
+                <h5 class="mb-0 fw-bold">Підтримка 24/7</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4 mt-5 align-items-center">
+        <div class="col-lg-6 order-lg-2">
+          <img src="https://images.unsplash.com/photo-1763568258367-1c52beb60be7?auto=format&fit=crop&w=1000&q=80" class="img-fluid rounded-4" alt="Ноутбук з кодом і графіками">
+        </div>
+        <div class="col-lg-6 order-lg-1">
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div class="d-flex">
+                <i class="bi bi-shield-check me-3 fs-2 text-primary mt-1"></i>
+                <div class="content">
+                  <h4 class="fw-bold fs-5">Безпека та надійність</h4>
+                  <p class="text-secondary fs-6">Ваші дані під захистом корпоративного рівня —
+                    можете бути спокійні.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="d-flex">
+                <i class="bi bi-box-seam me-3 fs-2 text-primary mt-1"></i>
+                <div class="content">
+                  <h4 class="fw-bold fs-5">Легка інтеграція</h4>
+                  <p class="text-secondary fs-6">Підключайте улюблені інструменти та сервіси й
+                    працюйте в єдиному середовищі.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="d-flex">
+                <i class="bi bi-globe me-3 fs-2 text-primary mt-1"></i>
+                <div class="content">
+                  <h4 class="fw-bold fs-5">Доступ звідусіль</h4>
+                  <p class="text-secondary fs-6">Працюйте з будь-якого місця та пристрою завдяки
+                    хмарній платформі.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="d-flex">
+                <i class="bi bi-chat-text me-3 fs-2 text-primary mt-1"></i>
+                <div class="content">
+                  <h4 class="fw-bold fs-5">Персональна підтримка</h4>
+                  <p class="text-secondary fs-6">Наші фахівці завжди готові допомогти з будь-якими
+                    питаннями.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="d-flex">
+                <i class="bi bi-lightbulb me-3 fs-2 text-primary mt-1"></i>
+                <div class="content">
+                  <h4 class="fw-bold fs-5">Розумна аналітика</h4>
+                  <p class="text-secondary fs-6">Отримуйте корисні дані, щоб ухвалювати кращі
+                    рішення та розвивати бізнес.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="d-flex">
+                <i class="bi bi-bar-chart me-3 fs-2 text-primary mt-1"></i>
+                <div class="content">
+                  <h4 class="fw-bold fs-5">Масштабованість</h4>
+                  <p class="text-secondary fs-6">Платформа зростає разом з вашим бізнесом і
+                    підлаштовується під нові потреби.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="py-5 bg-white">
+    <div class="container">
+      <div class="text-center mb-5">
+        <span class="badge text-primary-emphasis bg-primary-subtle rounded-pill mb-2 px-3 py-2">
+          ЦІНИ
+        </span>
+        <h2 class="h1 fw-bold text-dark">Доступні тарифи</h2>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+        <div class="col-lg-3 col-md-6">
+          <div class="card h-100 border-0 shadow-sm rounded-4 text-center">
+            <div class="card-body p-4">
+              <h4 class="fw-bold text-success">Безкоштовний</h4>
+              <div class="d-flex justify-content-center align-items-baseline my-3">
+                <span class="h1 fw-bold text-dark">$0</span>
+                <span class="text-secondary">/міс</span>
+              </div>
+              <div class="fs-1 text-success mb-4">
+                <i class="bi bi-box"></i>
+              </div>
+              <ul class="list-unstyled text-secondary mb-4">
+                <li>Базові функції</li>
+                <li>5 проєктів</li>
+                <li>Обмежене сховище</li>
+                <li class="text-decoration-line-through">Пріоритетна підтримка</li>
+                <li class="text-decoration-line-through">Власні звіти</li>
+              </ul>
+              <a href="#" class="btn btn-outline-primary rounded-pill px-5">Придбати</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="card h-100 border-0 shadow-lg rounded-4 text-center">
+            <div class="card-body p-4">
+              <h4 class="fw-bold text-primary">Стартовий</h4>
+              <div class="d-flex justify-content-center align-items-baseline my-3">
+                <span class="h1 fw-bold text-dark">$19</span>
+                <span class="text-secondary">/міс</span>
+              </div>
+              <div class="fs-1 text-primary mb-4">
+                <i class="bi bi-send"></i>
+              </div>
+              <ul class="list-unstyled text-secondary mb-4">
+                <li>Усе з безкоштовного</li>
+                <li>Необмежено проєктів</li>
+                <li>Сховище 50 ГБ</li>
+                <li>Стандартна підтримка</li>
+                <li class="text-decoration-line-through">Власні звіти</li>
+              </ul>
+              <a href="#" class="btn btn-primary rounded-pill px-5">Придбати</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="card h-100 border-0 shadow-sm rounded-4 text-center">
+            <div class="card-body p-4">
+              <h4 class="fw-bold text-warning">Бізнес</h4>
+              <div class="d-flex justify-content-center align-items-baseline my-3">
+                <span class="h1 fw-bold text-dark">$29</span>
+                <span class="text-secondary">/міс</span>
+              </div>
+              <div class="fs-1 text-warning mb-4">
+                <i class="bi bi-airplane"></i>
+              </div>
+              <ul class="list-unstyled text-secondary mb-4">
+                <li>Усе зі стартового</li>
+                <li>Окремий простір для команди</li>
+                <li>Сховище 100 ГБ</li>
+                <li>Розширена аналітика</li>
+                <li>Власні звіти</li>
+              </ul>
+              <a href="#" class="btn btn-outline-primary rounded-pill px-5">Придбати</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="card h-100 border-0 shadow-sm rounded-4 text-center">
+            <div class="card-body p-4">
+              <h4 class="fw-bold text-primary">Максимальний</h4>
+              <div class="d-flex justify-content-center align-items-baseline my-3">
+                <span class="h1 fw-bold text-dark">$49</span>
+                <span class="text-secondary">/міс</span>
+              </div>
+              <div class="fs-1 text-primary mb-4">
+                <i class="bi bi-rocket-takeoff"></i>
+              </div>
+              <ul class="list-unstyled text-secondary mb-4">
+                <li>Усе з бізнес-тарифу</li>
+                <li>Необмежено користувачів</li>
+                <li>Необмежене сховище</li>
+                <li>Пріоритетна підтримка</li>
+                <li>Персональний менеджер</li>
+              </ul>
+              <a href="#" class="btn btn-outline-primary rounded-pill px-5">Придбати</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <span class="badge text-primary-emphasis bg-primary-subtle rounded-pill mb-2 px-3 py-2">
+          ПИТАННЯ
+        </span>
+        <h2 class="h1 fw-bold text-dark">Часті запитання</h2>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+        <div class="col-lg-6">
+          <details class="faq-item p-3 border-bottom border-secondary">
+            <summary class="d-flex justify-content-between align-items-center fs-5 fw-semibold mb-0">
+              Як почати користуватися безкоштовним тарифом?
+              <i class="bi bi-chevron-right text-primary fs-5"></i>
+            </summary>
+            <p class="mb-0 mt-2 text-secondary fs-6">Натисніть кнопку «Почати» та пройдіть
+              реєстрацію. Для безкоштовного тарифу банківська картка не потрібна.</p>
+          </details>
+
+          <details class="faq-item p-3 border-bottom border-secondary">
+            <summary class="d-flex justify-content-between align-items-center fs-5 fw-semibold mb-0">
+              Чи можна змінити тариф будь-коли?
+              <i class="bi bi-chevron-right text-primary fs-5"></i>
+            </summary>
+            <p class="mb-0 mt-2 text-secondary fs-6">Так, ви можете перейти на інший тариф у
+              будь-який момент в особистому кабінеті. Зміни застосовуються одразу.</p>
+          </details>
+
+          <details class="faq-item p-3 border-bottom border-secondary">
+            <summary class="d-flex justify-content-between align-items-center fs-5 fw-semibold mb-0">
+              Які способи оплати ви приймаєте?
+              <i class="bi bi-chevron-right text-primary fs-5"></i>
+            </summary>
+            <p class="mb-0 mt-2 text-secondary fs-6">Ми приймаємо всі основні картки: Visa,
+              Mastercard, American Express і Discover. Також доступна оплата через PayPal.</p>
+          </details>
+        </div>
+
+        <div class="col-lg-6">
+          <details class="faq-item p-3 border-bottom border-secondary">
+            <summary class="d-flex justify-content-between align-items-center fs-5 fw-semibold mb-0">
+              Чи в безпеці мої дані?
+              <i class="bi bi-chevron-right text-primary fs-5"></i>
+            </summary>
+            <p class="mb-0 mt-2 text-secondary fs-6">Так. Ми використовуємо сучасне шифрування та
+              протоколи безпеки, щоб ваші дані завжди були захищені. Ваша довіра — наш
+              пріоритет.</p>
+          </details>
+
+          <details class="faq-item p-3 border-bottom border-secondary">
+            <summary class="d-flex justify-content-between align-items-center fs-5 fw-semibold mb-0">
+              Чи можна повернути кошти?
+              <i class="bi bi-chevron-right text-primary fs-5"></i>
+            </summary>
+            <p class="mb-0 mt-2 text-secondary fs-6">На всі платні тарифи діє гарантія повернення
+              коштів протягом 30 днів. Якщо вам не сподобається, ми повернемо всю суму без зайвих
+              запитань.</p>
+          </details>
+
+          <details class="faq-item p-3 border-bottom border-secondary">
+            <summary class="d-flex justify-content-between align-items-center fs-5 fw-semibold mb-0">
+              Чи можна скасувати підписку будь-коли?
+              <i class="bi bi-chevron-right text-primary fs-5"></i>
+            </summary>
+            <p class="mb-0 mt-2 text-secondary fs-6">Так, підписку можна скасувати в налаштуваннях
+              акаунта. Тариф діятиме до кінця оплаченого періоду.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="py-5 bg-white">
+    <div class="container">
+      <div class="text-center mb-5">
+        <span class="badge text-primary-emphasis bg-primary-subtle rounded-pill mb-2 px-3 py-2">
+          КОНТАКТИ
+        </span>
+        <h2 class="h1 fw-bold text-dark">Зв’яжіться з нами</h2>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-5">
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div class="card h-100 border-0 shadow-sm rounded-4">
+                <div class="card-body p-4 text-center">
+                  <div class="icon d-inline-flex justify-content-center align-items-center rounded-3
+                    bg-primary-subtle text-primary mb-3" style="width: 50px; height: 50px;">
+                    <i class="bi bi-geo-alt fs-4"></i>
+                  </div>
+                  <h5 class="fw-bold text-dark">Адреса</h5>
+                  <p class="mb-0 text-secondary">1600 Amphitheatre Parkway
+                    <br>Mountain View, CA 94043
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card h-100 border-0 shadow-sm rounded-4">
+                <div class="card-body p-4 text-center">
+                  <div class="icon d-inline-flex justify-content-center align-items-center rounded-3
+                    bg-primary-subtle text-primary mb-3" style="width: 50px; height: 50px;">
+                    <i class="bi bi-telephone fs-4"></i>
+                  </div>
+                  <h5 class="fw-bold text-dark">Телефон</h5>
+                  <p class="mb-0 text-secondary">+1 (650) 253-0000
+                    <br>Пн–Пт: 9:00–17:00 (PST)
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card h-100 border-0 shadow-sm rounded-4">
+                <div class="card-body p-4 text-center">
+                  <div class="icon d-inline-flex justify-content-center align-items-center rounded-3
+                    bg-primary-subtle text-primary mb-3" style="width: 50px; height: 50px;">
+                    <i class="bi bi-envelope fs-4"></i>
+                  </div>
+                  <h5 class="fw-bold text-dark">Пошта</h5>
+                  <p class="mb-0 text-secondary">info@example.com
+                    <br>support@example.com
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card h-100 border-0 shadow-sm rounded-4">
+                <div class="card-body p-4 text-center">
+                  <div class="icon d-inline-flex justify-content-center align-items-center rounded-3
+                    bg-primary-subtle text-primary mb-3" style="width: 50px; height: 50px;">
+                    <i class="bi bi-clock fs-4"></i>
+                  </div>
+                  <h5 class="fw-bold text-dark">Графік роботи</h5>
+                  <p class="mb-0 text-secondary">Понеділок – п’ятниця
+                    <br>9:00 – 17:00
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="card h-100 border-0 shadow-sm rounded-4">
+            <div class="card-body p-4">
+              <form action="" method="post">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" name="name" placeholder="Ваше ім’я"
+                      aria-label="Ваше ім’я" required>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="email" class="form-control" name="email" placeholder="Ваш email"
+                      aria-label="Ваш email" required>
+                  </div>
+                  <div class="col-12">
+                    <input type="text" class="form-control" name="subject" placeholder="Тема"
+                      aria-label="Тема" required>
+                  </div>
+                  <div class="col-12">
+                    <textarea class="form-control" name="message" rows="6" placeholder="Повідомлення"
+                      aria-label="Повідомлення" required></textarea>
+                  </div>
+                  <div class="col-12 text-center">
+                    <button type="submit" class="btn btn-primary rounded-pill px-5 py-2">
+                      Надіслати повідомлення
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="newsletter" class="py-5 bg-body-tertiary">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6 text-center">
+          <h4 class="fw-bold text-dark">Підпишіться на розсилку</h4>
+          <p class="text-secondary">Отримуйте останні новини про наші продукти та послуги!</p>
+          <form action="" method="post" class="mt-4">
+            <div class="input-group">
+              <input type="email" class="form-control" placeholder="Введіть ваш email"
+                aria-label="Email" required>
+              <button class="btn btn-primary" type="submit">Підписатися</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="footer" class="bg-white border-top border-secondary-subtle">
+    <div class="container py-5">
+      <div class="row gy-4">
+        <div class="col-lg-3 col-md-6">
+          <a href="#" class="d-flex align-items-center">
+            <h3 class="text-dark">Awesome Product</h3>
+          </a>
+          <p class="text-secondary">
+           вул. Івана Дзюби, 4 <br>
+            Вінниця, Вінницька область, 21000<br>
+            <strong>Телефон:</strong> +380672281488<br>
+            <strong>Email:</strong> neskazhu@gmail.com<br>
+          </p>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h4 class="text-dark fw-bold pb-2">Корисні посилання</h4>
+          <ul class="list-unstyled">
+            <li class="d-flex align-items-center py-2">
+              <i class="bi bi-chevron-right text-primary me-2"></i>
+              <a href="#" class="text-secondary link-offset-3-hover link-underline-primary
+                link-underline-opacity-0 link-underline-opacity-75-hover">Головна</a>
+            </li>
+            <li class="d-flex align-items-center py-2">
+              <i class="bi bi-chevron-right text-primary me-2"></i>
+              <a href="#about" class="text-secondary link-offset-3-hover link-underline-primary
+                link-underline-opacity-0 link-underline-opacity-75-hover">Про нас</a>
+            </li>
+            <li class="d-flex align-items-center py-2">
+              <i class="bi bi-chevron-right text-primary me-2"></i>
+              <a href="#features" class="text-secondary link-offset-3-hover link-underline-primary
+                link-underline-opacity-0 link-underline-opacity-75-hover">Можливості</a>
+            </li>
+            <li class="d-flex align-items-center py-2">
+              <i class="bi bi-chevron-right text-primary me-2"></i>
+              <a href="#pricing" class="text-secondary link-offset-3-hover link-underline-primary
+                link-underline-opacity-0 link-underline-opacity-75-hover">Ціни</a>
+            </li>
+            <li class="d-flex align-items-center py-2">
+              <i class="bi bi-chevron-right text-primary me-2"></i>
+              <a href="#faq" class="text-secondary link-offset-3-hover link-underline-primary
+                link-underline-opacity-0 link-underline-opacity-75-hover">Питання</a>
+            </li>
+            <li class="d-flex align-items-center py-2">
+              <i class="bi bi-chevron-right text-primary me-2"></i>
+              <a href="#contact" class="text-secondary link-offset-3-hover link-underline-primary
+                link-underline-opacity-0 link-underline-opacity-75-hover">Контакти</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h4 class="text-dark fw-bold pb-2">Наші послуги</h4>
+          <ul class="list-unstyled">
+            <li class="d-flex align-items-center py-2">
+              <i class="bi bi-chevron-right text-primary me-2"></i>
+              <a href="#" class="text-secondary link-offset-3-hover link-underline-primary
+                link-underline-opacity-0 link-underline-opacity-75-hover">Вебдизайн</a>
+            </li>
+            <li class="d-flex align-items-center py-2">
+              <i class="bi bi-chevron-right text-primary me-2"></i>
+              <a href="#" class="text-secondary link-offset-3-hover link-underline-primary
+                link-underline-opacity-0 link-underline-opacity-75-hover">Веброзробка</a>
+            </li>
+            <li class="d-flex align-items-center py-2">
+              <i class="bi bi-chevron-right text-primary me-2"></i>
+              <a href="#" class="text-secondary link-offset-3-hover link-underline-primary
+                link-underline-opacity-0 link-underline-opacity-75-hover">Управління продуктом</a>
+            </li>
+            <li class="d-flex align-items-center py-2">
+              <i class="bi bi-chevron-right text-primary me-2"></i>
+              <a href="#" class="text-secondary link-offset-3-hover link-underline-primary
+                link-underline-opacity-0 link-underline-opacity-75-hover">Маркетинг</a>
+            </li>
+            <li class="d-flex align-items-center py-2">
+              <i class="bi bi-chevron-right text-primary me-2"></i>
+              <a href="#" class="text-secondary link-offset-3-hover link-underline-primary
+                link-underline-opacity-0 link-underline-opacity-75-hover">Графічний дизайн</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h4 class="text-dark fw-bold pb-2">Ми в соцмережах</h4>
+          <p class="text-secondary">Стежте за нами в соцмережах, щоб першими дізнаватися про
+            оновлення та новини!
+          </p>
+          <div class="mt-3 d-flex">
+            <a href="#" class="rounded-circle bg-body-tertiary text-primary p-2 me-2 d-flex
+              justify-content-center align-items-center text-decoration-none" aria-label="Twitter">
+              <i class="bi bi-twitter"></i>
+            </a>
+            <a href="#" class="rounded-circle bg-body-tertiary text-primary p-2 me-2 d-flex
+              justify-content-center align-items-center text-decoration-none" aria-label="Facebook">
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a href="#" class="rounded-circle bg-body-tertiary text-primary p-2 me-2 d-flex
+              justify-content-center align-items-center text-decoration-none" aria-label="Instagram">
+              <i class="bi bi-instagram"></i>
+            </a>
+            <a href="#" class="rounded-circle bg-body-tertiary text-primary p-2 me-2 d-flex
+              justify-content-center align-items-center text-decoration-none" aria-label="LinkedIn">
+              <i class="bi bi-linkedin"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container py-4">
+      <div class="text-center text-secondary">
+        &copy; <strong><span>Awesome Product</span></strong>. Усі права захищено
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
